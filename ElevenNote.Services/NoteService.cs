@@ -41,14 +41,17 @@ namespace ElevenNote.Services
             {
                 var query =
                     ctx
-                    .Notes.Where(e => e.OwnerId == _userId)
-                    .Select(e => new NoteListItems
+                    .Notes
+                    .Where(e => e.OwnerId == _userId)
+                    .Select(
+                        e => new NoteListItems
                     {
                         NoteId = e.NoteId,
                         Title = e.Title,
                         CreatedUtc = e.CreatedUtc
 
-                    };
+                    }
+                        );
                 return query.ToArray();
             }
         }
