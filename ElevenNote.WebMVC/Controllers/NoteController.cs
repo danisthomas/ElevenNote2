@@ -51,7 +51,7 @@ namespace ElevenNote.WebMVC.Controllers
         public ActionResult Details(int id)
         {
             var svc = CreateNoteService();
-            var model = svc.GetNoteById(id);
+            var model = svc.GetNotebyId(id);
             return View(model);
         }
 
@@ -60,6 +60,20 @@ namespace ElevenNote.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NoteService(userId);
             return service;
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateNoteService();
+            var detail = service.GetNotebyId(id);
+            var model = new NoteEdit
+            {
+                NoteId = detail.NoteId,
+                Title = detail.Title,
+                Content = detail.Content
+            };
+
+            return View(model);
         }
 
     }
