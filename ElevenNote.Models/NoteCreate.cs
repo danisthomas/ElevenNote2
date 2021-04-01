@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ElevenNote.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +18,9 @@ namespace ElevenNote.Models
 
         [MaxLength(8000)]
         public string Content { get; set; }
+
+        [ForeignKey(nameof(category))]
+        public int CategoryId { get; set; }
+        public virtual Category category { get; set; }
     }
 }

@@ -54,10 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202103302259081_InitialMigration.cs" />
-    <Compile Include="Migrations\202103302259081_InitialMigration.Designer.cs">
-      <DependentUpon>202103302259081_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104012214316_InitialCreate.cs" />
+    <Compile Include="Migrations\202104012214316_InitialCreate.Designer.cs">
+      <DependentUpon>202104012214316_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104012308339_adding IsStarred.cs" />
+    <Compile Include="Migrations\202104012308339_adding IsStarred.Designer.cs">
+      <DependentUpon>202104012308339_adding IsStarred.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -68,8 +73,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103302259081_InitialMigration.resx">
-      <DependentUpon>202103302259081_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104012214316_InitialCreate.resx">
+      <DependentUpon>202104012214316_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104012308339_adding IsStarred.resx">
+      <DependentUpon>202104012308339_adding IsStarred.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -120,7 +120,7 @@ namespace ElevenNote.WebMVC.Controllers
                     
             }
 
-            ModelState.AddModelError("", "Your note could not be update.");
+            ModelState.AddModelError("", "Your note could not be updated.");
             return View(model);
         }
 
